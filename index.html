@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css" >
+
+    <title>Door Order Form</title>
+  </head>
+  <body>
+    <img src="rwlogo.jpg" class="img-fluid" id="logo" alt="Responsive image">
+
+    <h1 id="title">Door Order Form</h1>
+
+    <div class="container content">
+      <div class="row">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCompany">Company</label>
+              <input type="text" class="form-control info-left" id="inputCompany" placeholder="Company">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPhone">Phone</label>
+              <input type="text" class="form-control info-right" id="inputPhone" placeholder="(604)-000-0000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputContact">Contact</label>
+              <input type="text" class="form-control info-left" id="inputContact" placeholder="Name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputFax">Fax</label>
+              <input type="text" class="form-control info-right" id="inputFax" placeholder="(604)-000-0000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control info-left" id="inputEmail" placeholder="name@example.com">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPO">PO number</label>
+              <input type="text" class="form-control info-right" id="inputPO">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control info-left" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control info-right" id="inputCity" placeholder="Vancouver">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control info-left" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputprovince/state">Province/State</label>
+              <input type="text" class="form-control info-right" id="inputprovince/state" placeholder="British Columbia">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputPostalCodeZip">Postal Code/Zip</label>
+              <input type="text" class="form-control info-right" id="inputZip">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputDoorStyle">Door Style</label>
+              <input type="text" class="form-control" id="inputDoorStyle" placeholder="Cypress, Aspen, Hibiscus etc.">
+            </div>
+            <div class="form-group col-md-3">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <div class="btn-group float-left btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="doorType" id="inputPvc" value="pvc" checked> PVC
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="doorType" id="inputLaminate" value="laminate"> Laminate
+                </label>
+              </div>
+            </div>
+            <div class=" col-md-6">
+            </div>
+            <div class="form-group col-md-3">
+              <div class="btn-group float-right btn-group-toggle" id="unitButtons" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="unitType" id="inputImperial" value="imperial" checked> Imperial
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="unitType" id="inputMetric" value="metric"> Metric
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div id="doorSizesTableContainer" class="container col-md-12">
+              <table id="doorSizesTable" class="table table-striped order-list">
+                <thead>
+                  <tr>
+                    <th width= 3% scope="col">#</th>
+                    <th width= 19% scope="col">Profile Name</th>
+                    <th width= 6% scope="col">Qty</th>
+                    <th width= 11% scope="col">Height <br> (inches)</th>
+                    <th width= 11% scope="col">Width <br> (inches)</th>
+                    <th width= 11% scope="col">Height <br> (mm)</th>
+                    <th width= 11% scope="col">Width <br> (mm)</th>
+                    <th width= 27% scope="col">Special Instructions</th>
+                    <th width= 3% scope="col">del</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control inchRow" id=""></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="" ></textarea></td>
+                    <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <input type="button" class="btn btn-primary" id="addRow" value="Add Row +">
+            </div>
+          </div>
+          <div class="form-row" id="captchaRow">
+            <div class="col-md-12">
+              <div class="g-recaptcha" id="captcha" data-sitekey="6LdlF18UAAAAAL3FJ2rjMfx_bkaEDt3urYXRgnZX"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary">Complete Order</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="container-fluid footer">
+      
+    </div>
+
+  <!-- Bootstrap JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="index.js"></script>
+
+  </body>
+
+</html>

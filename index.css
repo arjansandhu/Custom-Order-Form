@@ -1,0 +1,81 @@
+body {
+	text-align: center;
+}
+
+form{
+	margin-bottom: 100px;
+}
+
+table td {
+	white-space: nowrap;
+}
+
+@media only screen and (max-width: 1100px) {
+    .content {
+	margin:0px auto;
+	width: 100%;
+	}
+}
+
+input[type="radio"]:active{
+	outline: none !important;
+    box-shadow: none;
+}
+
+.content {
+	margin:0px auto;
+	width: 1100px;
+}
+.footer {
+	margin:0px auto;
+	margin-top: 100px;
+	height: 150px;
+	background-color: #7d6556;
+}
+
+.btn-primary{
+	background-color:#7b604b;
+	border-color: #424242;
+}
+
+.btn-primary:focus,.btn-primary:active{
+	outline: none !important;
+    box-shadow: none;
+}
+
+.btn-primary:hover{
+   background-color: #3f150f;
+   border-color: #3f150f;
+}
+
+#title{
+	margin-bottom: 100px;
+	margin-top:  50px;
+}
+
+
+#inputPvc{
+	width: 50%;
+}
+
+#inputPvc{
+	width: 50%;
+}
+
+#doorSizesTable{
+	margin-top: 50px;
+}
+
+#captcha{
+	width: 304px;
+    margin: 0 auto;
+}
+
+#captchaRow{
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+#addRow{
+	margin:0px auto;
+}
