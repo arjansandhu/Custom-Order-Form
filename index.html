@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -21,7 +19,7 @@
 
     <div class="container content">
       <div class="row">
-        <form>
+        <form id="form">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCompany">Company</label>
@@ -130,57 +128,57 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
-                    <td><input type="text" class="form-control" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="text" class="form-control" id="1profile" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id="1quantity"></td>
+                    <td><input type="text" class="form-control inchRow" id="1heightInches"></td>
+                    <td><input type="text" class="form-control inchRow" id="1widthInches"></td>
+                    <td><input type="text" class="form-control mmRow" id="1heightMm" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="1widthMm" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="1notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
-                    <td><input type="text" class="form-control" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="text" class="form-control" id="2profile" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id="2quantity"></td>
+                    <td><input type="text" class="form-control inchRow" id="2heightInches"></td>
+                    <td><input type="text" class="form-control inchRow" id="2widthInches"></td>
+                    <td><input type="text" class="form-control mmRow" id="2heightMm" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="2widthMm" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="1notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
-                    <td><input type="text" class="form-control" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="text" class="form-control" id="3profile" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id="3quantity"></td>
+                    <td><input type="text" class="form-control inchRow" id="3heightInches"></td>
+                    <td><input type="text" class="form-control inchRow" id="3widthInches"></td>
+                    <td><input type="text" class="form-control mmRow" id="3heightMm" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="3widthMm" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="3notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
-                    <td><input type="text" class="form-control" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><textarea class="form-control" rows="1" id=""></textarea></td>
+                    <td><input type="text" class="form-control" id="4profile" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id="4quantity"></td>
+                    <td><input type="text" class="form-control inchRow" id="4heightInches"></td>
+                    <td><input type="text" class="form-control inchRow" id="4widthInches"></td>
+                    <td><input type="text" class="form-control mmRow" id="4heightMm" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="4widthMm" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="4notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
-                    <td><input type="text" class="form-control" id="" placeholder="Door, Drawer etc."></td>
-                    <td><input type="text" class="form-control" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control inchRow" id=""></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="" disabled></td>
-                    <td><textarea class="form-control" rows="1" id="" ></textarea></td>
+                    <td><input type="text" class="form-control" id="5profile" placeholder="Door, Drawer etc."></td>
+                    <td><input type="text" class="form-control" id="5quantity"></td>
+                    <td><input type="text" class="form-control inchRow" id="5heightInches"></td>
+                    <td><input type="text" class="form-control inchRow" id="5widthInches"></td>
+                    <td><input type="text" class="form-control mmRow" id="5heightMm" disabled></td>
+                    <td><input type="text" class="form-control mmRow" id="5widthMm" disabled></td>
+                    <td><textarea class="form-control" rows="1" id="5notes" ></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                 </tbody>
@@ -192,14 +190,9 @@
               <input type="button" class="btn btn-primary" id="addRow" value="Add Row +">
             </div>
           </div>
-          <div class="form-row" id="captchaRow">
-            <div class="col-md-12">
-              <div class="g-recaptcha" id="captcha" data-sitekey="6LdlF18UAAAAAL3FJ2rjMfx_bkaEDt3urYXRgnZX"></div>
-            </div>
-          </div>
           <div class="form-row">
             <div class="col-md-12">
-              <button type="submit" class="btn btn-primary">Complete Order</button>
+              <button type="submit" class="btn btn-primary" id="submitButton">Complete Order</button>
             </div>
           </div>
         </form>

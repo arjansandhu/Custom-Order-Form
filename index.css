@@ -79,3 +79,7 @@ input[type="radio"]:active{
 #addRow{
 	margin:0px auto;
 }
+
+#submitButton{
+	margin-top: 50px;
+}
