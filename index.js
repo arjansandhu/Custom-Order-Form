@@ -46,6 +46,22 @@ $(document).ready(function () {
 
     for(var i=0; i < counter; i++){
       $("#doorSizesTable tbody")[0].rows[i].cells[0].innerHTML = `${i+1}`;
+      $("#doorSizesTable tbody")[0].rows[i].cells[1].innerHTML = `<td><input type="text" class="form-control" id="${i+1}profile" placeholder="Door, Drawer etc."></td>`;
+      $("#doorSizesTable tbody")[0].rows[i].cells[2].innerHTML = `<td><input type="text" class="form-control" id="${i+1}quantity"></td>`;
+
+      if($("input[name='unitType']:checked").val() == 'imperial'){
+        $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches"></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches"></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm" disabled></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[6].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}widthMm" disabled></td>`;
+      }else if($("input[name='unitType']:checked").val() == 'metric'){
+        $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches" disabled></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches" disabled></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm"></td>`;
+        $("#doorSizesTable tbody")[0].rows[i].cells[6].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}widthMm"></td>`;
+      }
+
+      $("#doorSizesTable tbody")[0].rows[i].cells[7].innerHTML = `<td><textarea class="form-control" rows="1" id="${i+1}notes"></textarea></td>`;
     }
   });
 
@@ -74,8 +90,8 @@ $(document).ready(function () {
   });
 
 
+  //complete order
   var form = document.querySelector('form');
-
   document.querySelector('form').onsubmit = e => {
 
     e.preventDefault();
@@ -85,7 +101,7 @@ $(document).ready(function () {
     console.log(data);
 
 
-
+    $('#confirmationModal').modal();
 
   };
 
