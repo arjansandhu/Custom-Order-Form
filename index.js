@@ -163,8 +163,6 @@ $(document).ready(function () {
 
 
 
-
-
   $("#submitButton").on("click", function () {
     //send orderData to lambda endpoint
 

@@ -6,8 +6,9 @@ form{
 	margin-bottom: 100px;
 }
 
-table td{
+td{
 	white-space: nowrap;
+	padding: 0.25rem;
 }
 
 @media only screen and (max-width: 1100px){
@@ -53,6 +54,9 @@ input[type="radio"]:active{
 	margin-top:  50px;
 }
 
+#logo{
+	margin: 50px;
+}
 
 #inputPvc{
 	width: 50%;
