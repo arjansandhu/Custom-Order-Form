@@ -11,12 +11,12 @@ $(document).ready(function () {
     cols += `<td><input type="text" class="form-control" id="${counter+1}profile" placeholder="Door, Drawer etc."></td>`;
     cols += `<td><input type="text" class="form-control" id="${counter+1}quantity"></td>`;
 
-    if($("input[name='unitType']:checked").val() == 'imperial'){
+    if($("input[name='unitType']:checked").val() == 'Imperial'){
       cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}heightInches"></td>`;
       cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}widthInches"></td>`;
       cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}heightMm" disabled></td>`;
       cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}widthMm" disabled></td>`;
-    }else if($("input[name='unitType']:checked").val() == 'metric'){
+    }else if($("input[name='unitType']:checked").val() == 'Metric'){
       cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}heightInches" disabled></td>`;
       cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}widthInches" disabled></td>`;
       cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}heightMm"></td>`;
@@ -34,8 +34,6 @@ $(document).ready(function () {
       $("#doorSizesTable tbody")[0].rows[i].cells[0].innerHTML = `${i+1}`;
     }
 
-    console.log($("input[name='unitType']:checked").val() == 'imperial');
-
   });
 
 
@@ -49,12 +47,12 @@ $(document).ready(function () {
       $("#doorSizesTable tbody")[0].rows[i].cells[1].innerHTML = `<td><input type="text" class="form-control" id="${i+1}profile" placeholder="Door, Drawer etc."></td>`;
       $("#doorSizesTable tbody")[0].rows[i].cells[2].innerHTML = `<td><input type="text" class="form-control" id="${i+1}quantity"></td>`;
 
-      if($("input[name='unitType']:checked").val() == 'imperial'){
+      if($("input[name='unitType']:checked").val() == 'Imperial'){
         $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches"></td>`;
         $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches"></td>`;
         $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm" disabled></td>`;
         $("#doorSizesTable tbody")[0].rows[i].cells[6].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}widthMm" disabled></td>`;
-      }else if($("input[name='unitType']:checked").val() == 'metric'){
+      }else if($("input[name='unitType']:checked").val() == 'Metric'){
         $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches" disabled></td>`;
         $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches" disabled></td>`;
         $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm"></td>`;
@@ -67,10 +65,10 @@ $(document).ready(function () {
 
   //switch between laminate and pvc
   $('input[type=radio][name=doorType]').change(function() {
-    if (this.value == 'pvc') {
+    if (this.value == 'PVC') {
       $("#inputDoorStyle").attr('placeholder','Cypress, Aspen, Hibiscus etc.');
     }
-    else if (this.value == 'laminate') {
+    else if (this.value == 'Laminate') {
       $("#inputDoorStyle").attr('placeholder','Square, Half Wrap, Tight Wrap etc.');
     }
   });
@@ -79,11 +77,11 @@ $(document).ready(function () {
   //switch between metric and imperial
   $('input[type=radio][name=unitType]').change(function() {
 
-    if (this.value == 'metric') {
-        $(".inchRow").attr("disabled", true);
-        $(".mmRow").attr("disabled", false);
+    if (this.value == 'Metric') {
+      $(".inchRow").attr("disabled", true);
+      $(".mmRow").attr("disabled", false);
     }
-    else if (this.value == 'imperial') {
+    else if (this.value == 'Imperial') {
       $(".inchRow").attr("disabled", false);
       $(".mmRow").attr("disabled", true);
     }
@@ -100,9 +98,52 @@ $(document).ready(function () {
     Array.from(form).map(input => (data[input.id] = input.value));
     console.log(data);
 
+    let orderData = {};
+    orderData.rowCount = counter;
+    orderData.type = $('#typeButtons input:radio:checked').val();
+    orderData.units = $('#unitButtons input:radio:checked').val();
+    orderData.company = data.inputCompany;
+    orderData.contact = data.inputContact;
+    orderData.email = data.inputEmail;
+    orderData.phone = data.inputPhone;
+    orderData.fax = data.inputFax;
+    orderData.address = data.inputAddress;
+    orderData.address2 = data.inputAddress2;
+    orderData.city = data.inputCity;
+    orderData.province = data.inputProvince;
+    orderData.zip = data.inputZip;
+    orderData.PO = data.inputPO;
+    orderData.style = data.inputDoorStyle;
+
+
+
+
+
+
+
+
+
+
+    console.log(orderData);
+
+    $('#companyVal').text(orderData.company);
+    $('#contactVal').text(orderData.contact);
+    $('#emailVal').text(orderData.email);
+    $('#phoneVal').text(orderData.phone);
+    $('#faxVal').text(orderData.fax);
+    $('#addressVal').text(orderData.address);
+    $('#address2Val').text(orderData.address2);
+    $('#cityVal').text(orderData.city);
+    $('#provinceVal').text(orderData.province);
+    $('#zipVal').text(orderData.zip);
+    $('#POVal').text(orderData.PO);
+    $('#typeVal').text(orderData.type);
+    $('#styleVal').text(orderData.style);
+    $('#unitsVal').text(orderData.units);
+
+
 
     $('#confirmationModal').modal();
-
   };
 
 

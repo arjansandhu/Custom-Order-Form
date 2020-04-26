@@ -67,7 +67,7 @@
             </div>
             <div class="form-group col-md-4">
               <label for="inputprovince/state">Province/State</label>
-              <input type="text" class="form-control info-right" id="inputprovince/state" placeholder="British Columbia">
+              <input type="text" class="form-control info-right" id="inputProvince" placeholder="British Columbia">
             </div>
             <div class="form-group col-md-2">
               <label for="inputPostalCodeZip">Postal Code/Zip</label>
@@ -86,12 +86,12 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-3">
-              <div class="btn-group float-left btn-group-toggle" data-toggle="buttons">
+              <div class="btn-group float-left btn-group-toggle" id="typeButtons" data-toggle="buttons">
                 <label class="btn btn-secondary active">
-                  <input type="radio" name="doorType" id="inputPvc" value="pvc" checked> PVC
+                  <input type="radio" name="doorType" id="inputPvc" value="PVC" checked> PVC
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="doorType" id="inputLaminate" value="laminate"> Laminate
+                  <input type="radio" name="doorType" id="inputLaminate" value="Laminate"> Laminate
                 </label>
               </div>
             </div>
@@ -100,10 +100,10 @@
             <div class="form-group col-md-3">
               <div class="btn-group float-right btn-group-toggle" id="unitButtons" data-toggle="buttons">
                 <label class="btn btn-secondary active">
-                  <input type="radio" name="unitType" id="inputImperial" value="imperial" checked> Imperial
+                  <input type="radio" name="unitType" id="inputImperial" value="Imperial" checked> Imperial
                 </label>
                 <label class="btn btn-secondary">
-                  <input type="radio" name="unitType" id="inputMetric" value="metric"> Metric
+                  <input type="radio" name="unitType" id="inputMetric" value="Metric"> Metric
                 </label>
               </div>
             </div>
@@ -192,7 +192,7 @@
           </div>
           <div class="form-row">
             <div class="col-md-12">
-              <button type="submit" class="btn btn-primary" id="submitButton">Complete Order</button>
+              <button type="submit" class="btn btn-primary" id="confirmButton">Confirm Order</button>
             </div>
           </div>
         </form>
@@ -204,20 +204,38 @@
     </div>
 
     <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="confirmationModalTitle">Modal title</h5>
+            <h5 class="modal-title" id="confirmationModalTitle">Confirm Order</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-          <p>test text in modal body</p>
+          <p id="modalText">
+            Company: <span class="font-weight-bold" id="companyVal"></span><br>
+            Contact: <span class="font-weight-bold" id="contactVal"></span><br>
+            Email: <span class="font-weight-bold" id="emailVal"></span><br>
+            Phone: <span class="font-weight-bold" id="phoneVal"></span><br>
+            Fax: <span class="font-weight-bold" id="faxVal"></span><br>
+            Address: <span class="font-weight-bold" id="addressVal"></span><br>
+            Address 2: <span class="font-weight-bold" id="address2Val"></span><br>
+            City: <span class="font-weight-bold" id="cityVal"></span><br>
+            Province: <span class="font-weight-bold" id="provinceVal"></span><br>
+            Postal Code/Zip: <span class="font-weight-bold" id="zipVal"></span><br>
+            PO Number: <span class="font-weight-bold" id="POVal"></span><br>
+            <br>
+            Door Type: <span class="font-weight-bold" id="typeVal"></span><br>
+            Door Style: <span class="font-weight-bold" id="styleVal"></span><br>
+            Units: <span class="font-weight-bold" id="unitsVal"></span><br>
+
+
+          </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit Order</button>
+            <button type="button" class="btn btn-primary" id="submitButton">Submit Order</button>
           </div>
         </div>
       </div>
