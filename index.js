@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   var counter = $('#doorSizesTable tbody tr').length ;
-
+  let orderData = {};
 
   $("#addRow").on("click", function () {
     var newRow = $("<tr>");
@@ -42,10 +42,26 @@ $(document).ready(function () {
     $(this).closest("tr").remove();       
     counter = $('#doorSizesTable tbody tr').length;
 
+    console.log($("#doorSizesTable tbody tr"));
+
+    $("#doorSizesTable tbody tr").each(function(i){
+      var currentRow=$(this);
+
+      currentRow.find("td:eq(0)").innerHTML = `${i+1}`;
+      currentRow.find("td:eq(1) input").attr("id", `${i+1}profile`);
+  
+      console.log(i);
+    });
+
     for(var i=0; i < counter; i++){
       $("#doorSizesTable tbody")[0].rows[i].cells[0].innerHTML = `${i+1}`;
       $("#doorSizesTable tbody")[0].rows[i].cells[1].innerHTML = `<td><input type="text" class="form-control" id="${i+1}profile" placeholder="Door, Drawer etc."></td>`;
       $("#doorSizesTable tbody")[0].rows[i].cells[2].innerHTML = `<td><input type="text" class="form-control" id="${i+1}quantity"></td>`;
+
+      //$("#doorSizesTable tbody")[0].rows[i].cells[2].children().attr(id, `${i+1}quantity`);
+      //$("#doorSizesTable tbody")[0].rows[i].cells[2].
+
+      //console.log($("#doorSizesTable tbody")[0].rows[i].cells[2]);
 
       if($("input[name='unitType']:checked").val() == 'Imperial'){
         $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches"></td>`;
@@ -98,7 +114,6 @@ $(document).ready(function () {
     Array.from(form).map(input => (data[input.id] = input.value));
     console.log(data);
 
-    let orderData = {};
     orderData.rowCount = counter;
     orderData.type = $('#typeButtons input:radio:checked').val();
     orderData.units = $('#unitButtons input:radio:checked').val();
@@ -114,15 +129,22 @@ $(document).ready(function () {
     orderData.zip = data.inputZip;
     orderData.PO = data.inputPO;
     orderData.style = data.inputDoorStyle;
+    orderData.rows = [];
 
+    for(var row=1; row <= counter; row++){
 
+      var rowData = {
+        profileName : data[`${row}profile`],
+        quantity : data[`${row}quantity`],
+        heightInches :  data[`${row}heightInches`],
+        widthInches : data[`${row}widthInches`],
+        heightMm : data[`${row}heightMm`],
+        widthMm : data[`${row}widthMm`],
+        note : data[`${row}notes`]
+      };
 
-
-
-
-
-
-
+      orderData.rows.push(rowData);
+    }
 
     console.log(orderData);
 
@@ -141,6 +163,26 @@ $(document).ready(function () {
     $('#styleVal').text(orderData.style);
     $('#unitsVal').text(orderData.units);
 
+    $("#confirmationTable tbody tr").remove(); 
+    for(var i=0; i < orderData.rows.length; i++){
+
+      var currentRow = orderData.rows[i];
+    
+      var newRow = $("<tr>");
+      var cols = "";
+
+      cols += `<th scope="row">${i+1}</th>`;
+      cols += `<td>${currentRow.profileName}</td>`;
+      cols += `<td>${currentRow.quantity}</td>`;
+      cols += `<td>${currentRow.heightInches}</td>`;
+      cols += `<td>${currentRow.widthInches}</td>`;
+      cols += `<td>${currentRow.heightMm}</td>`;
+      cols += `<td>${currentRow.widthMm}</td>`;
+      cols += `<td>${currentRow.note}</td>`;
+
+      newRow.append(cols);
+      $("#confirmationTable").append(newRow);
+    }
 
 
     $('#confirmationModal').modal();

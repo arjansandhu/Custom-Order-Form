@@ -87,3 +87,14 @@ input[type="radio"]:active{
 #modalText{
 	text-align: left;
 }
+
+#confirmationTable{
+	table-layout: fixed;
+}
+
+@media (min-width: 768px) {
+	.modal-xl {
+	  width: 90%;
+	  max-width:1300px;
+	}
+  }

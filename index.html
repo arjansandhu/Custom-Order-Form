@@ -145,7 +145,7 @@
                     <td><input type="text" class="form-control inchRow" id="2widthInches"></td>
                     <td><input type="text" class="form-control mmRow" id="2heightMm" disabled></td>
                     <td><input type="text" class="form-control mmRow" id="2widthMm" disabled></td>
-                    <td><textarea class="form-control" rows="1" id="1notes"></textarea></td>
+                    <td><textarea class="form-control" rows="1" id="2notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
                   <tr>
@@ -204,7 +204,7 @@
     </div>
 
     <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="confirmationModalTitle">Confirm Order</h5>
@@ -229,6 +229,23 @@
             Door Type: <span class="font-weight-bold" id="typeVal"></span><br>
             Door Style: <span class="font-weight-bold" id="styleVal"></span><br>
             Units: <span class="font-weight-bold" id="unitsVal"></span><br>
+            <br>
+            <table id="confirmationTable" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th width= 3% scope="col">#</th>
+                  <th width= 21% scope="col">Profile Name</th>
+                  <th width= 7% scope="col">Qty</th>
+                  <th width= 11% scope="col">Height <br> (inches)</th>
+                  <th width= 11% scope="col">Width <br> (inches)</th>
+                  <th width= 11% scope="col">Height <br> (mm)</th>
+                  <th width= 11% scope="col">Width <br> (mm)</th>
+                  <th width= 25% scope="col">Special Instructions</th>
+              </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
 
 
           </p>
