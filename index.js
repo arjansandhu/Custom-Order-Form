@@ -42,43 +42,20 @@ $(document).ready(function () {
     $(this).closest("tr").remove();       
     counter = $('#doorSizesTable tbody tr').length;
 
-    console.log($("#doorSizesTable tbody tr"));
-
     $("#doorSizesTable tbody tr").each(function(i){
       var currentRow=$(this);
-
-      currentRow.find("td:eq(0)").innerHTML = `${i+1}`;
-      currentRow.find("td:eq(1) input").attr("id", `${i+1}profile`);
-  
-      console.log(i);
+      currentRow.find("th").text(`${i+1}`);
+      currentRow.find("td:eq(0) input").attr("id", `${i+1}profile`);
+      currentRow.find("td:eq(1) input").attr("id", `${i+1}quantity`);
+      currentRow.find("td:eq(2) input").attr("id", `${i+1}heightInches`);
+      currentRow.find("td:eq(3) input").attr("id", `${i+1}widthInches`);
+      currentRow.find("td:eq(4) input").attr("id", `${i+1}heightMm`);
+      currentRow.find("td:eq(5) input").attr("id", `${i+1}widthMm`);
+      currentRow.find("td:eq(6) textarea").attr("id", `${i+1}notes`);
     });
-
-    for(var i=0; i < counter; i++){
-      $("#doorSizesTable tbody")[0].rows[i].cells[0].innerHTML = `${i+1}`;
-      $("#doorSizesTable tbody")[0].rows[i].cells[1].innerHTML = `<td><input type="text" class="form-control" id="${i+1}profile" placeholder="Door, Drawer etc."></td>`;
-      $("#doorSizesTable tbody")[0].rows[i].cells[2].innerHTML = `<td><input type="text" class="form-control" id="${i+1}quantity"></td>`;
-
-      //$("#doorSizesTable tbody")[0].rows[i].cells[2].children().attr(id, `${i+1}quantity`);
-      //$("#doorSizesTable tbody")[0].rows[i].cells[2].
-
-      //console.log($("#doorSizesTable tbody")[0].rows[i].cells[2]);
-
-      if($("input[name='unitType']:checked").val() == 'Imperial'){
-        $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches"></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches"></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm" disabled></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[6].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}widthMm" disabled></td>`;
-      }else if($("input[name='unitType']:checked").val() == 'Metric'){
-        $("#doorSizesTable tbody")[0].rows[i].cells[3].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}heightInches" disabled></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[4].innerHTML = `<td><input type="text" class="form-control inchRow" id="${i+1}widthInches" disabled></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[5].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}heightMm"></td>`;
-        $("#doorSizesTable tbody")[0].rows[i].cells[6].innerHTML = `<td><input type="text" class="form-control mmRow" id="${i+1}widthMm"></td>`;
-      }
-
-      $("#doorSizesTable tbody")[0].rows[i].cells[7].innerHTML = `<td><textarea class="form-control" rows="1" id="${i+1}notes"></textarea></td>`;
-    }
   });
 
+  
   //switch between laminate and pvc
   $('input[type=radio][name=doorType]').change(function() {
     if (this.value == 'PVC') {
@@ -132,7 +109,6 @@ $(document).ready(function () {
     orderData.rows = [];
 
     for(var row=1; row <= counter; row++){
-
       var rowData = {
         profileName : data[`${row}profile`],
         quantity : data[`${row}quantity`],
@@ -142,7 +118,6 @@ $(document).ready(function () {
         widthMm : data[`${row}widthMm`],
         note : data[`${row}notes`]
       };
-
       orderData.rows.push(rowData);
     }
 
@@ -167,7 +142,6 @@ $(document).ready(function () {
     for(var i=0; i < orderData.rows.length; i++){
 
       var currentRow = orderData.rows[i];
-    
       var newRow = $("<tr>");
       var cols = "";
 
@@ -184,9 +158,18 @@ $(document).ready(function () {
       $("#confirmationTable").append(newRow);
     }
 
-
     $('#confirmationModal').modal();
   };
+
+
+
+
+
+  $("#submitButton").on("click", function () {
+    //send orderData to lambda endpoint
+
+
+  });
 
 
 });
