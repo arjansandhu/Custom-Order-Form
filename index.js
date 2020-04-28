@@ -10,19 +10,8 @@ $(document).ready(function () {
     cols += `<th scope="row">${counter+1}</th>`;
     cols += `<td><input type="text" class="form-control" id="${counter+1}profile" placeholder="Door, Drawer etc."></td>`;
     cols += `<td><input type="text" class="form-control" id="${counter+1}quantity"></td>`;
-
-    if($("input[name='unitType']:checked").val() == 'Imperial'){
-      cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}heightInches"></td>`;
-      cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}widthInches"></td>`;
-      cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}heightMm" disabled></td>`;
-      cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}widthMm" disabled></td>`;
-    }else if($("input[name='unitType']:checked").val() == 'Metric'){
-      cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}heightInches" disabled></td>`;
-      cols += `<td><input type="text" class="form-control inchRow" id="${counter+1}widthInches" disabled></td>`;
-      cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}heightMm"></td>`;
-      cols += `<td><input type="text" class="form-control mmRow" id="${counter+1}widthMm"></td>`;
-    }
-
+    cols += `<td><input type="text" class="form-control heightCol" id="${counter+1}height"></td>`;
+    cols += `<td><input type="text" class="form-control widthCol" id="${counter+1}width"></td>`;
     cols += `<td><textarea class="form-control" rows="1" id="${counter+1}notes"></textarea></td>`;
 
     cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>';
@@ -47,11 +36,9 @@ $(document).ready(function () {
       currentRow.find("th").text(`${i+1}`);
       currentRow.find("td:eq(0) input").attr("id", `${i+1}profile`);
       currentRow.find("td:eq(1) input").attr("id", `${i+1}quantity`);
-      currentRow.find("td:eq(2) input").attr("id", `${i+1}heightInches`);
-      currentRow.find("td:eq(3) input").attr("id", `${i+1}widthInches`);
-      currentRow.find("td:eq(4) input").attr("id", `${i+1}heightMm`);
-      currentRow.find("td:eq(5) input").attr("id", `${i+1}widthMm`);
-      currentRow.find("td:eq(6) textarea").attr("id", `${i+1}notes`);
+      currentRow.find("td:eq(2) input").attr("id", `${i+1}height`);
+      currentRow.find("td:eq(3) input").attr("id", `${i+1}width`);
+      currentRow.find("td:eq(4) textarea").attr("id", `${i+1}notes`);
     });
   });
 
@@ -71,12 +58,12 @@ $(document).ready(function () {
   $('input[type=radio][name=unitType]').change(function() {
 
     if (this.value == 'Metric') {
-      $(".inchRow").attr("disabled", true);
-      $(".mmRow").attr("disabled", false);
+      $("#heightHeader").html("Height <br> (mm)");
+      $("#widthHeader").html("Width <br> (mm)");
     }
     else if (this.value == 'Imperial') {
-      $(".inchRow").attr("disabled", false);
-      $(".mmRow").attr("disabled", true);
+      $("#heightHeader").html("Height <br> (inches)");
+      $("#widthHeader").html("Width <br> (inches)");
     }
   });
 
@@ -112,16 +99,23 @@ $(document).ready(function () {
       var rowData = {
         profileName : data[`${row}profile`],
         quantity : data[`${row}quantity`],
-        heightInches :  data[`${row}heightInches`],
-        widthInches : data[`${row}widthInches`],
-        heightMm : data[`${row}heightMm`],
-        widthMm : data[`${row}widthMm`],
+        height :  data[`${row}height`],
+        width : data[`${row}width`],
         note : data[`${row}notes`]
       };
       orderData.rows.push(rowData);
     }
 
     console.log(orderData);
+
+    if (orderData.units == 'Metric') {
+      $("#heightHeaderModal").html("Height <br> (mm)");
+      $("#widthHeaderModal").html("Width <br> (mm)");
+    }
+    else if (orderData.units == 'Imperial') {
+      $("#heightHeaderModal").html("Height <br> (inches)");
+      $("#widthHeaderModal").html("Width <br> (inches)");
+    }
 
     $('#companyVal').text(orderData.company);
     $('#contactVal').text(orderData.contact);
@@ -148,10 +142,8 @@ $(document).ready(function () {
       cols += `<th scope="row">${i+1}</th>`;
       cols += `<td>${currentRow.profileName}</td>`;
       cols += `<td>${currentRow.quantity}</td>`;
-      cols += `<td>${currentRow.heightInches}</td>`;
-      cols += `<td>${currentRow.widthInches}</td>`;
-      cols += `<td>${currentRow.heightMm}</td>`;
-      cols += `<td>${currentRow.widthMm}</td>`;
+      cols += `<td>${currentRow.height}</td>`;
+      cols += `<td>${currentRow.width}</td>`;
       cols += `<td>${currentRow.note}</td>`;
 
       newRow.append(cols);

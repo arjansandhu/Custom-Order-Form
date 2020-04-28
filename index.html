@@ -114,15 +114,13 @@
               <table id="doorSizesTable" class="table table-striped order-list">
                 <thead>
                   <tr>
-                    <th width= 3% scope="col">#</th>
-                    <th width= 19% scope="col">Profile Name</th>
-                    <th width= 6% scope="col">Qty</th>
-                    <th width= 11% scope="col">Height <br> (inches)</th>
-                    <th width= 11% scope="col">Width <br> (inches)</th>
-                    <th width= 11% scope="col">Height <br> (mm)</th>
-                    <th width= 11% scope="col">Width <br> (mm)</th>
-                    <th width= 27% scope="col">Special Instructions</th>
-                    <th width= 3% scope="col">del</th>
+                    <th width= 4% scope="col">#</th>
+                    <th width= 23% scope="col">Profile Name</th>
+                    <th width= 8% scope="col">Qty</th>
+                    <th width= 15% scope="col" id="heightHeader">Height <br> (inches)</th>
+                    <th width= 15% scope="col" id="widthHeader">Width <br> (inches)</th>
+                    <th width= 30% scope="col">Special Instructions</th>
+                    <th width= 5% scope="col">del</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -130,10 +128,8 @@
                     <th scope="row">1</th>
                     <td><input type="text" class="form-control" id="1profile" placeholder="Door, Drawer etc."></td>
                     <td><input type="text" class="form-control" id="1quantity"></td>
-                    <td><input type="text" class="form-control inchRow" id="1heightInches"></td>
-                    <td><input type="text" class="form-control inchRow" id="1widthInches"></td>
-                    <td><input type="text" class="form-control mmRow" id="1heightMm" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="1widthMm" disabled></td>
+                    <td><input type="text" class="form-control heightCol" id="1height"></td>
+                    <td><input type="text" class="form-control widthCol" id="1width"></td>
                     <td><textarea class="form-control" rows="1" id="1notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
@@ -141,10 +137,8 @@
                     <th scope="row">2</th>
                     <td><input type="text" class="form-control" id="2profile" placeholder="Door, Drawer etc."></td>
                     <td><input type="text" class="form-control" id="2quantity"></td>
-                    <td><input type="text" class="form-control inchRow" id="2heightInches"></td>
-                    <td><input type="text" class="form-control inchRow" id="2widthInches"></td>
-                    <td><input type="text" class="form-control mmRow" id="2heightMm" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="2widthMm" disabled></td>
+                    <td><input type="text" class="form-control heightCol" id="2height"></td>
+                    <td><input type="text" class="form-control widthCol" id="2width"></td>
                     <td><textarea class="form-control" rows="1" id="2notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
@@ -152,10 +146,8 @@
                     <th scope="row">3</th>
                     <td><input type="text" class="form-control" id="3profile" placeholder="Door, Drawer etc."></td>
                     <td><input type="text" class="form-control" id="3quantity"></td>
-                    <td><input type="text" class="form-control inchRow" id="3heightInches"></td>
-                    <td><input type="text" class="form-control inchRow" id="3widthInches"></td>
-                    <td><input type="text" class="form-control mmRow" id="3heightMm" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="3widthMm" disabled></td>
+                    <td><input type="text" class="form-control heightCol" id="3height"></td>
+                    <td><input type="text" class="form-control widthCol" id="3width"></td>
                     <td><textarea class="form-control" rows="1" id="3notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
@@ -163,10 +155,8 @@
                     <th scope="row">4</th>
                     <td><input type="text" class="form-control" id="4profile" placeholder="Door, Drawer etc."></td>
                     <td><input type="text" class="form-control" id="4quantity"></td>
-                    <td><input type="text" class="form-control inchRow" id="4heightInches"></td>
-                    <td><input type="text" class="form-control inchRow" id="4widthInches"></td>
-                    <td><input type="text" class="form-control mmRow" id="4heightMm" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="4widthMm" disabled></td>
+                    <td><input type="text" class="form-control heightCol" id="4height"></td>
+                    <td><input type="text" class="form-control widthCol" id="4width"></td>
                     <td><textarea class="form-control" rows="1" id="4notes"></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
@@ -174,10 +164,8 @@
                     <th scope="row">5</th>
                     <td><input type="text" class="form-control" id="5profile" placeholder="Door, Drawer etc."></td>
                     <td><input type="text" class="form-control" id="5quantity"></td>
-                    <td><input type="text" class="form-control inchRow" id="5heightInches"></td>
-                    <td><input type="text" class="form-control inchRow" id="5widthInches"></td>
-                    <td><input type="text" class="form-control mmRow" id="5heightMm" disabled></td>
-                    <td><input type="text" class="form-control mmRow" id="5widthMm" disabled></td>
+                    <td><input type="text" class="form-control heightCol" id="5height"></td>
+                    <td><input type="text" class="form-control widthCol" id="5width"></td>
                     <td><textarea class="form-control" rows="1" id="5notes" ></textarea></td>
                     <td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="X"></td>
                   </tr>
@@ -234,13 +222,11 @@
               <thead>
                 <tr>
                   <th width= 5% scope="col">#</th>
-                  <th width= 21% scope="col">Profile Name</th>
-                  <th width= 6% scope="col">Qty</th>
-                  <th width= 11% scope="col">Height <br> (inches)</th>
-                  <th width= 11% scope="col">Width <br> (inches)</th>
-                  <th width= 11% scope="col">Height <br> (mm)</th>
-                  <th width= 11% scope="col">Width <br> (mm)</th>
-                  <th width= 23% scope="col">Special Instructions</th>
+                  <th width= 23% scope="col">Profile Name</th>
+                  <th width= 5% scope="col">Qty</th>
+                  <th width= 15% scope="col" id="heightHeaderModal">Height <br> (inches)</th>
+                  <th width= 15% scope="col" id="widthHeaderModal">Width <br> (inches)</th>
+                  <th width= 29% scope="col">Special Instructions</th>
               </tr>
               </thead>
               <tbody>
