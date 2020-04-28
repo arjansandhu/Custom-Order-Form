@@ -50,12 +50,13 @@ input[type="radio"]:active{
 }
 
 #title{
-	margin-bottom: 100px;
-	margin-top:  50px;
+	margin-bottom: 60px;
+	margin-top:  10px;
 }
 
 #logo{
-	margin: 50px;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 #inputPvc{
