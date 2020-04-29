@@ -162,11 +162,26 @@ $(document).ready(function () {
     orderData.orderDate = Date().toString();
 
     //send orderData to lambda endpoint
+    const formURL = 'https://2y7l7ikl3m.execute-api.ca-central-1.amazonaws.com/Prod/submitForm';
 
+    console.log('Sending: ', JSON.stringify(orderData));
 
+    // Create the AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", formURL, true);
+    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
+    // Send the collected data as JSON
+    xhr.send(JSON.stringify(orderData));
 
-
+    xhr.onloadend = response => {
+      if (response.target.status === 200) {
+        console.log("SUCCESS - 200");
+      } else {
+        console.error(JSON.parse(response));
+      }
+    };
 
   });
 
