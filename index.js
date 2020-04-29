@@ -93,6 +93,7 @@ $(document).ready(function () {
     orderData.zip = data.inputZip;
     orderData.PO = data.inputPO;
     orderData.style = data.inputDoorStyle;
+    orderData.colour = data.inputDoorColour;
     orderData.rows = [];
 
     for(var row=1; row <= counter; row++){
@@ -130,6 +131,7 @@ $(document).ready(function () {
     $('#POVal').text(orderData.PO);
     $('#typeVal').text(orderData.type);
     $('#styleVal').text(orderData.style);
+    $('#colourVal').text(orderData.colour);
     $('#unitsVal').text(orderData.units);
 
     $("#confirmationTable tbody tr").remove(); 
@@ -156,7 +158,14 @@ $(document).ready(function () {
 
 
   $("#submitButton").on("click", function () {
+
+    orderData.orderDate = Date().toString();
+
     //send orderData to lambda endpoint
+
+
+
+
 
 
   });

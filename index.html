@@ -20,6 +20,7 @@
     <div class="container content">
       <div class="row">
         <form id="form">
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputCompany">Company</label>
@@ -30,6 +31,7 @@
               <input type="text" class="form-control info-right" id="inputPhone" placeholder="(604)-000-0000">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputContact">Contact</label>
@@ -40,6 +42,7 @@
               <input type="text" class="form-control info-right" id="inputFax" placeholder="(604)-000-0000">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail">Email</label>
@@ -50,6 +53,7 @@
               <input type="text" class="form-control info-right" id="inputPO">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputAddress">Address</label>
@@ -60,6 +64,7 @@
               <input type="text" class="form-control info-right" id="inputCity" placeholder="Vancouver">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputAddress2">Address 2</label>
@@ -74,6 +79,24 @@
               <input type="text" class="form-control info-right" id="inputZip">
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+              <div class="btn-group btn-group-toggle" id="typeButtons" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                  <input type="radio" name="doorType" id="inputPvc" value="PVC" checked> PVC
+                </label>
+                <label class="btn btn-secondary">
+                  <input type="radio" name="doorType" id="inputLaminate" value="Laminate"> Laminate
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+            </div>
+          </div>
+
           <div class="form-row">
             <div class="form-group col-md-3">
             </div>
@@ -84,21 +107,23 @@
             <div class="form-group col-md-3">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group col-md-3">
-              <div class="btn-group float-left btn-group-toggle" id="typeButtons" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="doorType" id="inputPvc" value="PVC" checked> PVC
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="doorType" id="inputLaminate" value="Laminate"> Laminate
-                </label>
-              </div>
             </div>
-            <div class=" col-md-6">
+            <div class="form-group col-md-6">
+              <label for="inputDoorColour">Colour</label>
+              <input type="text" class="form-control" id="inputDoorColour">
             </div>
             <div class="form-group col-md-3">
-              <div class="btn-group float-right btn-group-toggle" id="unitButtons" data-toggle="buttons">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+            </div>
+            <div class="form-group col-md-4">
+              <div class="btn-group btn-group-toggle" id="unitButtons" data-toggle="buttons">
                 <label class="btn btn-secondary active">
                   <input type="radio" name="unitType" id="inputImperial" value="Imperial" checked> Imperial
                 </label>
@@ -106,6 +131,8 @@
                   <input type="radio" name="unitType" id="inputMetric" value="Metric"> Metric
                 </label>
               </div>
+            </div>
+            <div class="form-group col-md-4">
             </div>
           </div>
 
@@ -216,8 +243,9 @@
             <br>
             Door Type: <span class="font-weight-bold" id="typeVal"></span><br>
             Door Style: <span class="font-weight-bold" id="styleVal"></span><br>
-            Units: <span class="font-weight-bold" id="unitsVal"></span><br>
+            Colour: <span class="font-weight-bold" id="colourVal"></span><br>
             <br>
+            Units: <span class="font-weight-bold" id="unitsVal"></span><br>
             <table id="confirmationTable" class="table table-bordered">
               <thead>
                 <tr>

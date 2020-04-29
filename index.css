@@ -27,6 +27,7 @@ input[type="radio"]:active{
 	margin:0px auto;
 	width: 1100px;
 }
+
 .footer {
 	margin:0px auto;
 	margin-top: 100px;
@@ -59,26 +60,13 @@ input[type="radio"]:active{
 	margin-bottom: 20px;
 }
 
-#inputPvc{
-	width: 50%;
-}
-
-#inputPvc{
-	width: 50%;
-}
-
 #doorSizesTable{
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 #captcha{
 	width: 304px;
     margin: 0 auto;
-}
-
-#captchaRow{
-	margin-top: 80px;
-	margin-bottom: 20px;
 }
 
 #addRow{
