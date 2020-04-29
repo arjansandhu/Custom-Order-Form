@@ -198,8 +198,17 @@ $(document).ready(function () {
         };
       });
     });
-
   });
 
-
 });
+
+
+var recaptchaCallback = function () {
+  console.log('recaptcha is ready');
+  grecaptcha.render("recaptchaDiv", {
+      sitekey: '6Lev6O8UAAAAABN5x0VnB9RnqWwjvvA13SBUcyVp',
+      callback: function () {
+          console.log('recaptcha callback');
+      }
+  });
+}
